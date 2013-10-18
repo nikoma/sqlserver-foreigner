@@ -14,10 +14,10 @@ module Foreigner
                   CASE WHEN foreign_key.status & 4096 <> 0
                   THEN 'c' ELSE 'r'
                   END AS dependency
-          FROM    sysobjects AS from_table,
+          FROM    sys_objects AS from_table,
                   sysforeignkeys AS f,
-                  sysobjects AS to_table,
-                  sysobjects AS foreign_key,
+                  sys_objects AS to_table,
+                  sys-objects AS foreign_key,
                   syscolumns AS from_column,
                   syscolumns AS to_column
           WHERE   from_table.type = 'U'
